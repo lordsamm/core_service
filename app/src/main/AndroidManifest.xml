@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.gasoptimizer">
+    package="com.example.coreservice">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:label="Gas Optimizer"
         android:icon="@android:drawable/ic_dialog_info">
-        
+
         <activity
             android:name=".MainActivity"
             android:label="Gas Optimizer"
@@ -19,6 +21,10 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".service.ClipboardMonitorService" android:exported="false" />
+        <service
+            android:name=".service.ClipboardMonitorService"
+            android:exported="false" />
+
     </application>
+
 </manifest>
