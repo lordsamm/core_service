@@ -21,10 +21,6 @@
             </intent-filter>
         </activity>
 
-        <service
-            android:name=".service.ClipboardMonitorService"
-            android:exported="false" />
-
     </application>
 
 </manifest>
