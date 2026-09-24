@@ -9,12 +9,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/Theme.CoreService">
+        android:label="Gas Optimizer"
+        android:icon="@android:drawable/ic_dialog_info">
 
         <activity
             android:name=".MainActivity"
+            android:label="Gas Optimizer"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
