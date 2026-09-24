@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'com.example.coreservice'
-    compileSdk 31
+    compileSdk 30
     
     defaultConfig {
         applicationId "com.example.coreservice"
         minSdk 21
-        targetSdk 31
+        targetSdk 30
         versionCode 1
         versionName "1.0"
     }
@@ -26,11 +26,6 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
-    }
-    
-    packagingOptions {
-        exclude 'META-INF/proguard/androidx-*.pro'
-        exclude 'META-INF/CHANGES'
     }
     
     lintOptions {
