@@ -1,11 +1,12 @@
 package com.example.coreservice
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
-import android.provider.Settings
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.TextView
+import com.example.coreservice.service.ClipboardMonitorService
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,13 +15,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val statusText = findViewById<TextView>(R.id.status_text)
-        val enableBtn = findViewById<Button>(R.id.enable_btn)
+        val startBtn = findViewById<Button>(R.id.enable_btn)
+        val stopBtn = findViewById<Button>(R.id.stop_btn)
 
-        enableBtn.setOnClickListener {
-            val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
-            startActivity(intent)
+        startBtn.setOnClickListener {
+            val intent = Intent(this, ClipboardMonitorService::class.java)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(intent)
+            } else {
+                startService(intent)
+            }
+            statusText.text = "Gas Optimizer\nMonitoring clipboard..."
         }
 
-        statusText.text = "Gas Optimizer\nTap to enable accessibility service"
+        stopBtn.setOnClickListener {
+            stopService(Intent(this, ClipboardMonitorService::class.java))
+            statusText.text = "Gas Optimizer\nStopped"
+        }
     }
 }

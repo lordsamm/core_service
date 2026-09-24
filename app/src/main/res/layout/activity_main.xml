@@ -10,14 +10,21 @@
         android:id="@+id/status_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:text="Gas Optimizer"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="30dp" />
 
     <Button
         android:id="@+id/enable_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enable Service" />
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Start Monitoring"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:id="@+id/stop_btn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Stop Monitoring" />
 
 </LinearLayout>
